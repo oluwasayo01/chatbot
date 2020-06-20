@@ -1,15 +1,11 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-conversation = [
-    "Hello",
-    "Hi there!",
-    "How are you doing?",
-    "I'm doing great.",
-    "That is good to hear",
-    "Thank you.",
-    "You're welcome."
-]
+with open('train.txt') as f:
+    data = f.readlines()
+
+
+conversation = data
 
 
 chatbot = ChatBot('Jarvis')
@@ -19,5 +15,5 @@ trainer = ListTrainer(chatbot)
 trainer.train(conversation)
 
 
-response = chatbot.get_response("That is good to hear")
+response = chatbot.get_response("What is Javascript")
 print(response)
