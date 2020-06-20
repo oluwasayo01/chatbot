@@ -1,13 +1,25 @@
-{% extends 'layouts.html' %}
-
-{% block title %}
-     Chatbot
-{% endblock title %}
-
-{% block content %}
-     <div id="messages">
-          <h3>Sayo</h3>
-          <div>Hello there. How are you today?</div>
-          
-     </div>
+{% extends 'layouts.html' %} {% block title %} Chatbot {% endblock title %} {%
+block content %}
+<div class="container mt-3 w-50 border rounded-lg">
+  <div class="messages">
+    <h3>Sayo</h3>
+    <div>Hello there. How are you today?</div>
+    <h3>Sayo</h3>
+    <div>Hello there. How are you today?</div>
+  </div>
+</div>
+<div class="container bg-primary w-50">
+  <div class="text-area mt-3 w-75 d-flex justify-content-evenly">
+    <div class="form-group">
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <div>
+      <button>Send <i class="fa fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
 {% endblock content %}

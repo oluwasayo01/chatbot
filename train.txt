@@ -157,7 +157,7 @@ Screen objects are used to read the information from the client's screen. The pr
 Explain the unshift() method ?
 This method is functional at the starting of the array, unlike the push(). It adds the desired number of elements to the top of an array. For example -
 Define unescape() and escape() functions?
-The escape () function is responsible for coding a string so as to make the transfer of the information from one computer to the other, across a network.
+The escape() function is responsible for coding a string so as to make the transfer of the information from one computer to the other, across a network.
 The unescape() function is very important as it decodes the coded string.
 What are the decodeURI() and encodeURI()?
 EncodeURl() is used to convert URL into their hex coding. And DecodeURI() is used to convert the encoded URL back to normal.

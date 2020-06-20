@@ -12,19 +12,24 @@ chatbot = ChatBot('Jarvis',
                                   'chatterbot.logic.BestMatch'])
 
 
-
+trainer = ListTrainer(chatbot)
+trainer.train(conversation)
 
 app = Flask(__name__)
 
-@app.route('/chatbot/', methods=['POST'])
+@app.route('/')
 def home():
+     return render_template('index.html')
+
+@app.route('/myjsbot')
+def bot_response():
      # txt = text
-     if request.method == 'POST':
-          trainer = ListTrainer(chatbot)
-          trainer.train(conversation)
-          txt = str(request.form['message'])
-          resp = stream_with_context(chatbot.get_response(txt))
-          return Response(resp, status=200, mimetype='application/json')
+     # if request.method == 'POST':
+     txt = request.form['message']
+     # resp = chatbot.get_response(txt)
+     print(type(txt))
+     return str(chatbot.get_response(txt))
+          # return str(resp)
           
 
 
