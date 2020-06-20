@@ -1,5 +1,3 @@
-
-
 What is JavaScript?
 JavaScript is a client-side as well as server side scripting language that can be inserted into HTML pages and is understood by web browsers. JavaScript is also an Object based Programming language
 Enumerate the differences between Java and JavaScript?
@@ -127,7 +125,7 @@ Describe the properties of an anonymous function in JavaScript?
 A function that is declared without any named identifier is known as an anonymous function. In general, an anonymous function is inaccessible after its declaration.
 What is the difference between .call() and .apply()?
 The function .call() and .apply() are very similar in their usage except a little difference. .call() is used when the number of the function's arguments are known to the programmer, as they have to be mentioned as arguments in the call statement. On the other hand, .apply() is used when the number is not known. The function .apply() expects the argument to be an array.
-The basic difference between .call() and .apply() is in the way arguments are passed to the function. Their usage can be illustrated by the given example.
+The basic difference between .call() and .apply() is in the way arguments are passed to the function.
 Define event bubbling?
 JavaScript allows DOM elements to be nested inside each other. In such a case, if the handler of the child is clicked, the handler of parent will also work as if it were clicked too.
 Is JavaScript case sensitive? Give an example?
@@ -172,3 +170,50 @@ Namespacing is used for grouping the desired functions, variables etc. under a u
 How can JavaScript codes be hidden from old browsers that don't support JavaScript?
 For hiding JavaScript codes from old browsers: Add "<!--" without the quotes in the code just after the <script> tag. Add "//-->" without the quotes in the code just before the <script> tag.
 Old browsers will now treat this JavaScript code as a long HTML comment. While, a browser that supports JavaScript, will take the "<!--" and "//-->" as one-line comments.
+Can you differentiate between let and var?
+Both let and var are used for variable and method declaration in JavaScript. However, the most important difference between the two JS keywords is that while the var keyword is function scoped, the let keyword is block scoped.
+What do you understand by Closures in JavaScript?
+Closures provide a better, concise, creative, and expressive way of writing code for JavaScript developers and programmers. Technically speaking, closures are a combination of lexical environment and function.
+Please explain NEGATIVE_INFINITY in JavaScript.
+The NEGATIVE_INFINITY is a static property in JS that results when a negative number is divided by 0
+Question: How will you remove duplicates from a JS array?
+There are several possible ways of eliminating duplicates from a JS array. Three most-used ones are described as follows:
+By using Filter – It is possible to remove duplicates from an array in JavaScript by applying a filter to the same. In order to call the filter() method, three arguments are required. By using the For loop – In this method of removing duplicate elements from an array, an empty array is used for storing all the repeating. By using Set – This is the simplest approach of removing duplicate elements from an array in JS. A set is an inbuilt object for storing unique values in an array.
+What's the difference between undefined and null?.
+Before understanding the differences between undefined and null we must understand the similarities between them.
+What is the DOM?
+DOM stands for Document Object Model is an interface (API) for HTML and XML documents. When the browser first reads (parses) our HTML document it creates a big object, a really big object based on the HTML document this is the DOM
+What is Event Propagation?
+When an event occurs on a DOM element, that event does not entirely occur on that just one element. In the Bubbling Phase, the event bubbles up or it goes to its parent, to its grandparents, to its grandparent's parent until it reaches all the way to the window while in the Capturing Phase the event starts from the window down to the element that triggered the event or the event.target
+What's the difference between event.preventDefault() and event.stopPropagation() methods?
+The event.preventDefault() method prevents the default behavior of an element. If used in a form element it prevents it from submitting. If used in an anchor element it prevents it from navigating. If used in a contextmenu it prevents it from showing or displaying. While the event.stopPropagation() method stops the propogation of an event or it stops the event from occurring in the bubbling or capturing phase
+What is event.target ?
+In simplest terms, the event.target is the element on which the event occurred or the element that triggered the event
+What is Hoisting?
+Hoisting is the term used to describe the moving of variables and functions to the top of their (global or function) scope on where we define that variable or function
+What is Scope?
+Scope in JavaScript is the area where we have valid access to variables or functions. JavaScript has three types of Scopes. Global Scope, Function Scope, and Block Scope(ES6)
+What is global scope?
+Global Scope - variables or functions declared in the global namespace are in the global scope and therefore is accessible everywhere in our code
+What is function scope?
+Function Scope - variables,functions and parameters declared within a function are accessible inside that function but not outside of it
+what is block scope?
+Block Scope - variables (let,const) declared within a block {} can only be access within it.
+What are Closures?
+This is probably the hardest question of all these questions because Closures is a controversial topic. So I'm gonna explain it from what I understand. Closures is simply the ability of a function at the time of declaration to remember the references of variables and parameters on its current scope, on its parent function scope, on its parent's parent function scope until it reaches the global scope with the help of Scope Chain. Basically it is the Scope created when the function was declared
+What are the falsy values in JavaScript?
+falsy values are values that when converted to boolean becomes false.
+What is IIFE?
+Immediately Invoked Function Expression
+What is the prototype of an object?
+A prototype in simplest terms is a blueprint of an object. It is used as a fallback for properties and methods if it does exist in the current object. It's the way to share properties and functionality between objects. It's the core concept around JavaScript's Prototypal Inheritance.
+What is an IIFE, what is the use of it?
+An IIFE or Immediately Invoked Function Expression is a function that is gonna get invoked or executed after its creation or declaration
+What's the difference between Function.prototype.apply and Function.prototype.call?
+The only difference between apply and call is how we pass the arguments in the function being called. In apply we pass the arguments as an array and in call we pass the arguments directly in the argument list
+What is Functional Programming and what are the features of JavaScript that makes it a candidate as a functional language?
+Functional Programming is a declarative programming paradigm or pattern on how we build our applications with functions using expressions that calculates a value without mutating or changing the arguments that are passed to it
+What are Higher Order Functions?
+Higher-Order Function are functions that can return a function or receive argument or arguments which have a value of a function
+Why are functions called First-class Objects?
+Functions in JavaScript are First-class Objects because they are treated as any other value in the language. They can be assigned to variables, they can be properties of an object which are called methods, they can be an item in array, they can be passed as arguments to a function, and they can be returned as values of a function

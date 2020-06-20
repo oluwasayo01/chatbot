@@ -14,11 +14,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+    <style>
+
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand text-white text-bold" href="#">Chatbot</a>
+      <a class="navbar-brand text-white text-bold" href="#">JS Bot</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -31,21 +37,89 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <div class="collapse navbar-collapse w-50" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
+            <a class="nav-link text-bold text-white" href="#"
+              >@sayo HNG-02980 <span class="sr-only">(current)</span></a
             >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
       </div>
     </nav>
-    <div class="d-flex flex-column justify-content-between bg-secondary" style="height: 90vh;">
+    <div
+      class="d-flex flex-column justify-content-between"
+      style="
+        height: 93vh;
+        background: url(../static/img/chatbot.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+      "
+    >
       {% block content %} {% endblock content %}
     </div>
+    <script>
+      document.querySelector("#btn").addEventListener("click", () => {
+        const txt = document.querySelector("#input").value;
+
+        var request = document.createElement("div");
+        var inputClasslist = ["card", "mb-3", "bg-primary", "text-white"];
+        request.classList.add(...inputClasslist);
+        request.style.maxWidth = "540px";
+        var input = `
+                        <div class="row no-gutters">
+                          <div class="col-md-8">
+                            <div class="card-body p-0">
+                              <p class="card-text p-0 ml-3">
+                                ${txt}
+                              </p>
+                              <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                        `;
+        request.innerHTML = input;
+        document.querySelector(".messages").appendChild(request);
+
+        // request url
+        var url = `/myjsbot/${txt}`;
+        console.log(url);
+        var http = new XMLHttpRequest();
+
+        http.open("GET", url, true);
+        http.send();
+
+        http.onload = function () {
+          var div = document.createElement("div");
+          if (this.status >= 200 && this.status < 300) {
+            var classlist = [
+              "card",
+              "mb-3",
+              "bg-success",
+              "text-white",
+              "ml-5",
+            ];
+            div.classList.add(...classlist);
+            div.style.maxWidth = "540px";
+            var output = `
+                        <div class="row no-gutters">
+                          <div class="col-md-8">
+                            <div class="card-body p-0">
+                              <p class="card-text p-0 ml-3">
+                                ${this.responseText}
+                              </p>
+                              <p class="card-text"><small class="text-muted"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                        `;
+            div.innerHTML = output;
+            document.querySelector(".messages").appendChild(div);
+          } else {
+            console.log(this.status);
+          }
+        };
+      });
+    </script>
   </body>
 </html>

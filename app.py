@@ -21,11 +21,11 @@ app = Flask(__name__)
 def home():
      return render_template('index.html')
 
-@app.route('/myjsbot')
-def bot_response():
+@app.route('/myjsbot/<text>')
+def bot_response(text):
      # txt = text
      # if request.method == 'POST':
-     txt = request.form['message']
+     txt = text
      # resp = chatbot.get_response(txt)
      print(type(txt))
      return str(chatbot.get_response(txt))
