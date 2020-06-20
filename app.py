@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, Response, stream_with_context
-# from chatbot import chatbot
+from flask import Flask, render_template
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
@@ -23,13 +22,8 @@ def home():
 
 @app.route('/myjsbot/<text>')
 def bot_response(text):
-     # txt = text
-     # if request.method == 'POST':
      txt = text
-     # resp = chatbot.get_response(txt)
-     print(type(txt))
      return str(chatbot.get_response(txt))
-          # return str(resp)
           
 
 
